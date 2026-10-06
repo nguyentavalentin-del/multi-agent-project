@@ -11,6 +11,48 @@ Les deux agents poursuivent un objectif commun — produire le film — tout en 
 
 ---
 
+## Structure du projet
+
+Le projet est organisé en trois grandes parties :
+
+```text
+src/
+├── agents/
+│   ├── DirectorAgent.java
+│   ├── ProducerAgent.java
+│   └── Phase2Agent.java
+│
+├── behaviours/
+│   ├── SendPropositionBehaviour.java
+│   ├── WaitPropositionBehaviour.java
+│   ├── ProducerEvaluateBehaviour.java
+│   ├── DirectorEvaluateBehaviour.java
+│   ├── AcceptBehaviour.java
+│   ├── CancelBehaviour.java
+│   ├── EndBehaviour.java
+│   ├── Phase2InitBehaviour.java
+│   └── RepartitionEvaluateBehaviour.java
+│
+└── utils/
+    ├── Proposition.java
+    ├── RepartitionBudget.java
+    └── Planchers.java
+```
+
+### `agents/`
+
+Contient les agents JADE et l'interface commune utilisée pour la phase 2.
+
+### `behaviours/`
+
+Contient les comportements utilisés pour gérer les différents états de la négociation.
+
+### `utils/`
+
+Contient les structures de données utilisées pendant les échanges, notamment les propositions, les répartitions budgétaires et les planchers.
+
+---
+
 ## Fonctionnement
 
 La négociation se déroule en **deux phases successives** :
@@ -255,48 +297,6 @@ getPlanchers()
 ```
 
 Cette approche permet notamment de réutiliser les behaviours de la phase 2 pour les deux agents.
-
----
-
-## Structure du projet
-
-Le projet est organisé en trois grandes parties :
-
-```text
-src/
-├── agents/
-│   ├── DirectorAgent.java
-│   ├── ProducerAgent.java
-│   └── Phase2Agent.java
-│
-├── behaviours/
-│   ├── SendPropositionBehaviour.java
-│   ├── WaitPropositionBehaviour.java
-│   ├── ProducerEvaluateBehaviour.java
-│   ├── DirectorEvaluateBehaviour.java
-│   ├── AcceptBehaviour.java
-│   ├── CancelBehaviour.java
-│   ├── EndBehaviour.java
-│   ├── Phase2InitBehaviour.java
-│   └── RepartitionEvaluateBehaviour.java
-│
-└── utils/
-    ├── Proposition.java
-    ├── RepartitionBudget.java
-    └── Planchers.java
-```
-
-### `agents/`
-
-Contient les agents JADE et l'interface commune utilisée pour la phase 2.
-
-### `behaviours/`
-
-Contient les comportements utilisés pour gérer les différents états de la négociation.
-
-### `utils/`
-
-Contient les structures de données utilisées pendant les échanges, notamment les propositions, les répartitions budgétaires et les planchers.
 
 ---
 
